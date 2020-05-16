@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>text</key>
+		<string>[呲牙]</string>
+		<key>image</key>
+		<string>f_static_000</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[调皮]</string>
+		<key>image</key>
+		<string>f_static_001</string>
+	</dict>
+	<dict>
+		<key>text</key>
+<string>[亲亲]</string>
+<key>image</key>
+   <string>f_static_036</string>
+
+	</dict>
+<dict>
+		<key>text</key>
+		<string>[偷笑]</string>
+		<key>image</key>
+		<string>f_static_003</string>
+	</dict>
+
+	<dict>
+<key>text</key>
+		 <string>[可爱]</string>
+<key>image</key>
+   <string>f_static_018</string>
+
+	</dict>
+
+	<dict>
+<key>text</key>
+		 <string>[害羞]</string>
+<key>image</key>
+   <string>f_static_020</string>
+
+
+
+	</dict>
+
+	<dict>
+		<key>text</key>
+		<string>[流汗]</string>
+		<key>image</key>
+		<string>f_static_002</string>
+	</dict>
+
+	<dict>
+		<key>text</key>
+		<string>[再见]</string>
+		<key>image</key>
+		<string>f_static_004</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[敲打]</string>
+		<key>image</key>
+		<string>f_static_005</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[擦汗]</string>
+		<key>image</key>
+		<string>f_static_006</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>f_static_007</string>
+		<key>text</key>
+		<string>[猪头]</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[玫瑰]</string>
+		<key>image</key>
+		<string>f_static_008</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[流泪]</string>
+		<key>image</key>
+		<string>f_static_009</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[大哭]</string>
+		<key>image</key>
+		<string>f_static_010</string>
+	</dict>
+	<dict>
+		<key>text</key>
+   <string>[嘘]</string>
+<key>image</key>
+   <string>f_static_011</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+   <string>[酷]</string>
+<key>image</key>
+   <string>f_static_012</string>
+
+
+
+	</dict>
+	<dict>
+
+		<key>text</key>
+   <string>[抓狂]</string>
+<key>image</key>
+   <string>f_static_013</string>
+
+	</dict>
+	<dict>
+
+		<key>text</key>
+   <string>[委屈]</string>
+<key>image</key>
+   <string>f_static_014</string>
+
+
+	</dict>
+	<dict>
+				<key>text</key>
+   <string>[便便]</string>
+<key>image</key>
+   <string>f_static_015</string>
+
+
+	</dict>
+	<dict>
+
+  <key>text</key>
+   <string>[炸弹]</string>
+<key>image</key>
+   <string>f_static_016</string>
+
+	</dict>
+	<dict>
+
+ <key>text</key>
+   <string>[菜刀]</string>
+<key>image</key>
+   <string>f_static_017</string>
+
+	</dict>
+
+	<dict>
+
+<key>text</key>
+		 <string>[色]</string>
+<key>image</key>
+   <string>f_static_019</string>
+
+
+	</dict>
+
+	<dict>
+<key>text</key>
+	 <string>[得意]</string>
+<key>image</key>
+   <string>f_static_021</string>
+
+
+
+	</dict>
+	<dict>
+<key>text</key>
+ <string>[吐]</string>
+<key>image</key>
+   <string>f_static_022</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[微笑]</string>
+<key>image</key>
+   <string>f_static_023</string>
+
+
+	</dict>
+	<dict>
+<key>text</key>
+			<string>[发怒]</string>
+<key>image</key>
+   <string>f_static_024</string>
+
+
+	</dict>
+	<dict>
+		<key>text</key>
+				<string>[尴尬]</string>
+<key>image</key>
+   <string>f_static_025</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+	<string>[惊恐]</string>
+<key>image</key>
+   <string>f_static_026</string>
+
+	</dict>
+
+	<dict>
+<key>text</key>
+		<string>[冷汗]</string>
+<key>image</key>
+   <string>f_static_027</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+<string>[爱心]</string>
+<key>image</key>
+   <string>f_static_028</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+<string>[示爱]</string>
+<key>image</key>
+   <string>f_static_029</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+<string>[白眼]</string>
+<key>image</key>
+   <string>f_static_030</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[傲慢]</string>
+<key>image</key>
+   <string>f_static_031</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[难过]</string>
+<key>image</key>
+   <string>f_static_032</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+<string>[惊讶]</string>
+<key>image</key>
+   <string>f_static_033</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+<string>[疑问]</string>
+<key>image</key>
+   <string>f_static_034</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+<string>[睡]</string>
+<key>image</key>
+   <string>f_static_035</string>
+
+	</dict>
+
+	<dict>
+<key>text</key>
+<string>[憨笑]</string>
+<key>image</key>
+   <string>f_static_037</string>
+
+	</dict>
+	<dict>
+	<key>text</key>
+		<string>[爱情]</string>
+<key>image</key>
+   <string>f_static_038</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+<string>[衰]</string>
+<key>image</key>
+   <string>f_static_039</string>
+
+	</dict>
+	<dict>
+	<key>text</key>
+<string>[撇嘴]</string>
+<key>image</key>
+   <string>f_static_040</string>
+
+	</dict>
+	<dict>
+	<key>text</key>
+<string>[阴险]</string>
+<key>image</key>
+   <string>f_static_041</string>
+
+	</dict>
+	<dict>
+	<key>text</key>
+<string>[奋斗]</string>
+<key>image</key>
+   <string>f_static_042</string>
+
+	</dict>
+	<dict>
+	<key>text</key>
+<string>[发呆]</string>
+<key>image</key>
+   <string>f_static_043</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[右哼哼]</string>
+		<key>image</key>
+		<string>f_static_044</string>
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[拥抱]</string>
+		<key>image</key>
+		<string>f_static_045</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[坏笑]</string>
+		<key>image</key>
+		<string>f_static_046</string>
+
+	</dict>
+
+	<dict>
+<key>text</key>
+		<string>[飞吻]</string>
+		<key>image</key>
+		<string>f_static_047</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[鄙视]</string>
+		<key>image</key>
+		<string>f_static_048</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[晕]</string>
+		<key>image</key>
+		<string>f_static_049</string>
+
+	</dict>
+	<dict>
+
+<key>text</key>
+		<string>[大兵]</string>
+		<key>image</key>
+		<string>f_static_050</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[可怜]</string>
+		<key>image</key>
+		<string>f_static_051</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[强]</string>
+		<key>image</key>
+		<string>f_static_052</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[弱]</string>
+		<key>image</key>
+		<string>f_static_053</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[握手]</string>
+		<key>image</key>
+		<string>f_static_054</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[胜利]</string>
+		<key>image</key>
+		<string>f_static_055</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[抱拳]</string>
+		<key>image</key>
+		<string>f_static_056</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[凋谢]</string>
+		<key>image</key>
+		<string>f_static_057</string>
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[饭]</string>
+		<key>image</key>
+		<string>f_static_058</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[蛋糕]</string>
+		<key>image</key>
+		<string>f_static_059</string>
+
+	</dict>
+
+	<dict>
+<key>text</key>
+		<string>[西瓜]</string>
+		<key>image</key>
+		<string>f_static_060</string>
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[啤酒]</string>
+		<key>image</key>
+		<string>f_static_061</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[飘虫]</string>
+		<key>image</key>
+		<string>f_static_062</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[勾引]</string>
+		<key>image</key>
+		<string>f_static_063</string>
+
+	</dict>
+	<dict>
+<key>text</key>
+		<string>[OK]</string>
+		<key>image</key>
+		<string>f_static_064</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[爱你]</string>
+		<key>image</key>
+		<string>f_static_065</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[咖啡]</string>
+		<key>image</key>
+		<string>f_static_066</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[钱]</string>
+		<key>image</key>
+		<string>f_static_067</string>
+
+	</dict>
+
+	<dict>
+		<key>text</key>
+		<string>[月亮]</string>
+		<key>image</key>
+		<string>f_static_068</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[美女]</string>
+		<key>image</key>
+		<string>f_static_069</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[刀]</string>
+		<key>image</key>
+		<string>f_static_070</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[发抖]</string>
+		<key>image</key>
+		<string>f_static_071</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[差劲]</string>
+		<key>image</key>
+		<string>f_static_072</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[拳头]</string>
+		<key>image</key>
+		<string>f_static_073</string>
+
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[心碎]</string>
+		<key>image</key>
+		<string>f_static_074</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[太阳]</string>
+		<key>image</key>
+		<string>f_static_075</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[礼物]</string>
+		<key>image</key>
+		<string>f_static_076</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[足球]</string>
+		<key>image</key>
+		<string>f_static_077</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[骷髅]</string>
+		<key>image</key>
+		<string>f_static_078</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[挥手]</string>
+		<key>image</key>
+
+		<string>f_static_079</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[闪电]</string>
+		<key>image</key>
+
+
+		<string>f_static_080</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[饥饿]</string>
+		<key>image</key>
+
+		<string>f_static_081</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[困]</string>
+		<key>image</key>
+
+		<string>f_static_082</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[咒骂]</string>
+		<key>image</key>
+
+		<string>f_static_083</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[折磨]</string>
+		<key>image</key>
+
+		<string>f_static_084</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[抠鼻]</string>
+		<key>image</key>
+
+		<string>f_static_085</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[鼓掌]</string>
+		<key>image</key>
+
+
+		<string>f_static_086</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[糗大了]</string>
+		<key>image</key>
+
+
+		<string>f_static_087</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[左哼哼]</string>
+		<key>image</key>
+
+		<string>f_static_088</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[哈欠]</string>
+		<key>image</key>
+
+		<string>f_static_089</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[快哭了]</string>
+		<key>image</key>
+
+		<string>f_static_090</string>
+	</dict>
+	<dict>
+
+		<key>text</key>
+		<string>[吓]</string>
+		<key>image</key>
+
+		<string>f_static_091</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[篮球]</string>
+		<key>image</key>
+
+		<string>f_static_092</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[乒乓球]</string>
+		<key>image</key>
+
+		<string>f_static_093</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[NO]</string>
+		<key>image</key>
+
+
+		<string>f_static_094</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[跳跳]</string>
+		<key>image</key>
+
+		<string>f_static_095</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[怄火]</string>
+		<key>image</key>
+
+
+		<string>f_static_096</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[转圈]</string>
+		<key>image</key>
+
+
+		<string>f_static_097</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[磕头]</string>
+		<key>image</key>
+
+		<string>f_static_098</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[回头]</string>
+		<key>image</key>
+
+		<string>f_static_099</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[跳绳]</string>
+		<key>image</key>
+
+		<string>f_static_100</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[激动]</string>
+		<key>image</key>
+
+
+		<string>f_static_101</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[街舞]</string>
+		<key>image</key>
+
+
+		<string>f_static_102</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[献吻]</string>
+		<key>image</key>
+
+		<string>f_static_103</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[左太极]</string>
+		<key>image</key>
+
+
+		<string>f_static_104</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[右太极]</string>
+		<key>image</key>
+
+		<string>f_static_105</string>
+	</dict>
+	<dict>
+		<key>text</key>
+		<string>[闭嘴]</string>
+		<key>image</key>
+
+		<string>f_static_106</string>
+	</dict>
+</array>
+</plist>
