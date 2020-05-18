@@ -7,13 +7,14 @@
 //
 
 #import "NSBundle+FaceImage.h"
+#import "FaceTextManager.h"
 
 @implementation NSBundle (FaceImage)
 
 + (instancetype)faceSouceBundle {
     static NSBundle *guideSouceBundle = nil;
     if (guideSouceBundle == nil) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"face_image" ofType:@"bundle"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:[FaceTextManager manager].boundleName ofType:@"bundle"];
         guideSouceBundle = [NSBundle bundleWithURL:[NSURL fileURLWithPath:path]];
     }
     return guideSouceBundle;

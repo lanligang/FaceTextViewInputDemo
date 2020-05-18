@@ -24,6 +24,7 @@
 	_editeV = [[EditeKeyboardView alloc]init];
 	_editeV.hidden = YES;
 	[self.view addSubview:_editeV];
+	
 }
 
 - (IBAction)commitClicked:(id)sender {

@@ -22,7 +22,18 @@
     });
     return manager;
 }
-
+-(instancetype)init
+{
+	self = [super init];
+	if (self) {
+		self.boundleName = @"face_image";  //默认
+	}
+	return self;
+}
++(void)setFaceBundleName:(NSString *)boundleName
+{
+	[FaceTextManager manager].boundleName = boundleName;
+}
 + (void)loadLocalFaceSourceNames:(NSArray<NSString *> *)faces {
     if (faces && [faces isKindOfClass:[NSArray class]]) {
         for (int i = 0; i < faces.count; i++) {
@@ -38,10 +49,17 @@
         }
     }
 }
-
++ (NSMutableAttributedString *)attributedStringForString:(NSString *)text
+												 andFont:(UIFont *)font
+										   andLineHeight:(CGFloat)lineHeight
+{
+	return [self attributedStringForString:text andFont:font andTextColor:[UIColor blackColor] andLineHeight:lineHeight];
+}
 + (NSMutableAttributedString *)attributedStringForString:(NSString *)text
                                                  andFont:(UIFont *)font
-                                           andLineHeight:(CGFloat)lineHeight {
+											andTextColor:(UIColor *)color
+                                           andLineHeight:(CGFloat)lineHeight
+{
     if (text && [text isKindOfClass:[NSString class]]) {
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.lineSpacing = lineHeight; //设置行间距
@@ -54,6 +72,7 @@
         NSMutableParagraphStyle *phstyle = [[NSMutableParagraphStyle alloc] init];
         phstyle.lineSpacing = lineHeight;
         [abs addAttribute:NSParagraphStyleAttributeName value:phstyle range:NSMakeRange(0, abs.length)];
+		[abs addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, abs.length)];
         return abs;
     }
     return nil;
@@ -124,7 +143,7 @@
                 emojiMatchingResult.range = result.range;
                 emojiMatchingResult.showingDescription = showingDescription;
 
-                emojiMatchingResult.emojiImage = [NSBundle faceImage:[NSString stringWithFormat:@"%@@3x", emoji.imageName]]; //加载图片
+                emojiMatchingResult.emojiImage = [NSBundle faceImage:[NSString stringWithFormat:@"%@", emoji.imageName]]; //加载图片
                 [emojiMatchingResults addObject:emojiMatchingResult];
             }
         }

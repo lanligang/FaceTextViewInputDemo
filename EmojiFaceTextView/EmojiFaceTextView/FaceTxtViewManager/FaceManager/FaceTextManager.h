@@ -16,25 +16,38 @@
 //表情数组
 @property (nonatomic, strong) NSMutableArray *faceDataArray;
 
+@property (nonatomic,strong)NSString *boundleName;
 //表情只加载一次
 + (instancetype)manager;
 
-//加载所有的表情策略
+//设置 表情图片所在的文件名
++(void)setFaceBundleName:(NSString *)boundleName;
 
+//加载所有的表情策略
 /** 只调用一次
   faces plist 名称数组
  */
 + (void)loadLocalFaceSourceNames:(NSArray<NSString *> *)faces;
 
+//默认颜色 黑色
+/** 获取表情富文本   | >>  ~~~ [开心] ····· 格式
+* text ： 原始文本
+* font  ： 字号
+* lineHeight ： 行高
+*/
++ (NSMutableAttributedString *)attributedStringForString:(NSString *)text
+												 andFont:(UIFont *)font
+										   andLineHeight:(CGFloat)lineHeight;
 /** 获取表情富文本   | >>  ~~~ [开心] ····· 格式
  * text ： 原始文本
  * font  ： 字号
  * lineHeight ： 行高
+ * color  文字颜色
  */
 + (NSMutableAttributedString *)attributedStringForString:(NSString *)text
                                                  andFont:(UIFont *)font
+											andTextColor:(UIColor *)color
                                            andLineHeight:(CGFloat)lineHeight;
-
 //获取某个富文本的size
 /**
  *  attributedString : 富文本字符串
@@ -49,7 +62,6 @@
  */
 - (void)replaceEmojiForAttributedString:(NSMutableAttributedString *)attributedString
 								   font:(UIFont *)font;
-
 /**
  *  range 富文本每个附件算一个 长度的range
  *  attributedText  带有附件的富文本
@@ -63,7 +75,6 @@
  */
 + (NSString *)originalTextInRange:(NSRange)range
 				withAttributedText:(NSAttributedString *)abs;
-
 
 /**
  * 方法和上面的一样都是用来查找当前文字 只是查找范围大小不同

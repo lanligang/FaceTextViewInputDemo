@@ -17,7 +17,6 @@
 		8F6D0B0F246F94D500A7F2F6 /* EmojiFaceTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D0B0E246F94D500A7F2F6 /* EmojiFaceTextViewTests.m */; };
 		8F6D0B1A246F94D500A7F2F6 /* EmojiFaceTextViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D0B19246F94D500A7F2F6 /* EmojiFaceTextViewUITests.m */; };
 		8F6D0B3A246F94E900A7F2F6 /* face_image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F6D0B28246F94E900A7F2F6 /* face_image.bundle */; };
-		8F6D0B3B246F94E900A7F2F6 /* face_array.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F6D0B29246F94E900A7F2F6 /* face_array.plist */; };
 		8F6D0B3C246F94E900A7F2F6 /* InputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D0B2D246F94E900A7F2F6 /* InputTextView.m */; };
 		8F6D0B3D246F94E900A7F2F6 /* EditeKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D0B2E246F94E900A7F2F6 /* EditeKeyboardView.m */; };
 		8F6D0B3E246F94E900A7F2F6 /* EmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6D0B30246F94E900A7F2F6 /* EmojiModel.m */; };
@@ -76,7 +75,6 @@
 		8F6D0B19246F94D500A7F2F6 /* EmojiFaceTextViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmojiFaceTextViewUITests.m; sourceTree = "<group>"; };
 		8F6D0B1B246F94D500A7F2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F6D0B28246F94E900A7F2F6 /* face_image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = face_image.bundle; sourceTree = "<group>"; };
-		8F6D0B29246F94E900A7F2F6 /* face_array.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = face_array.plist; sourceTree = "<group>"; };
 		8F6D0B2B246F94E900A7F2F6 /* InputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextView.h; sourceTree = "<group>"; };
 		8F6D0B2C246F94E900A7F2F6 /* EditeKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditeKeyboardView.h; sourceTree = "<group>"; };
 		8F6D0B2D246F94E900A7F2F6 /* InputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTextView.m; sourceTree = "<group>"; };
@@ -118,6 +116,7 @@
 		8F6D0B5D246F957D00A7F2F6 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		8F6D0B5E246F957D00A7F2F6 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		8F6D0B5F246F957D00A7F2F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8FA411A424723FE9003AADAF /* face_array.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = face_array.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +173,10 @@
 				8F6D0AF6246F94D200A7F2F6 /* SceneDelegate.m */,
 				8F6D0AF8246F94D200A7F2F6 /* ViewController.h */,
 				8F6D0AF9246F94D200A7F2F6 /* ViewController.m */,
+				8F6D0B2C246F94E900A7F2F6 /* EditeKeyboardView.h */,
+				8F6D0B2E246F94E900A7F2F6 /* EditeKeyboardView.m */,
 				8F6D0B43246F957D00A7F2F6 /* Masonry */,
-				8F6D0B27246F94E900A7F2F6 /* FaceTxt */,
+				8F6D0B27246F94E900A7F2F6 /* FaceTxtViewManager */,
 				8F6D0AFB246F94D200A7F2F6 /* Main.storyboard */,
 				8F6D0AFE246F94D500A7F2F6 /* Assets.xcassets */,
 				8F6D0B00246F94D500A7F2F6 /* LaunchScreen.storyboard */,
@@ -203,26 +204,23 @@
 			path = EmojiFaceTextViewUITests;
 			sourceTree = "<group>";
 		};
-		8F6D0B27246F94E900A7F2F6 /* FaceTxt */ = {
+		8F6D0B27246F94E900A7F2F6 /* FaceTxtViewManager */ = {
 			isa = PBXGroup;
 			children = (
-				8F6D0B28246F94E900A7F2F6 /* face_image.bundle */,
-				8F6D0B29246F94E900A7F2F6 /* face_array.plist */,
-				8F6D0B2A246F94E900A7F2F6 /* View */,
+				8FA411A324723FD5003AADAF /* source */,
+				8F6D0B2A246F94E900A7F2F6 /* FaceInputTextView */,
 				8F6D0B2F246F94E900A7F2F6 /* FaceManager */,
 			);
-			path = FaceTxt;
+			path = FaceTxtViewManager;
 			sourceTree = "<group>";
 		};
-		8F6D0B2A246F94E900A7F2F6 /* View */ = {
+		8F6D0B2A246F94E900A7F2F6 /* FaceInputTextView */ = {
 			isa = PBXGroup;
 			children = (
-				8F6D0B2C246F94E900A7F2F6 /* EditeKeyboardView.h */,
-				8F6D0B2E246F94E900A7F2F6 /* EditeKeyboardView.m */,
 				8F6D0B2B246F94E900A7F2F6 /* InputTextView.h */,
 				8F6D0B2D246F94E900A7F2F6 /* InputTextView.m */,
 			);
-			path = View;
+			path = FaceInputTextView;
 			sourceTree = "<group>";
 		};
 		8F6D0B2F246F94E900A7F2F6 /* FaceManager */ = {
@@ -282,6 +280,15 @@
 				8F6D0B5E246F957D00A7F2F6 /* MASViewAttribute.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		8FA411A324723FD5003AADAF /* source */ = {
+			isa = PBXGroup;
+			children = (
+				8FA411A424723FE9003AADAF /* face_array.plist */,
+				8F6D0B28246F94E900A7F2F6 /* face_image.bundle */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +400,6 @@
 				8F6D0B6B246F957D00A7F2F6 /* README.md in Resources */,
 				8F6D0B3A246F94E900A7F2F6 /* face_image.bundle in Resources */,
 				8F6D0AFD246F94D200A7F2F6 /* Main.storyboard in Resources */,
-				8F6D0B3B246F94E900A7F2F6 /* face_array.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

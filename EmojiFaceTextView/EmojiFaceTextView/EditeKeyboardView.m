@@ -15,6 +15,10 @@
 static float inputKeyBoardHeight = 150.0;
 
 static float faceView_height = 240.0f;
+@interface EditeKeyboardView()
+<InputTextViewDelegate>
+@end
+
 
 @implementation EditeKeyboardView
 {
@@ -75,7 +79,7 @@ static float faceView_height = 240.0f;
         make.right.mas_equalTo(-2);
         make.height.mas_equalTo(25.0);
     }];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textViewDidChangeTextNotification:) name:UITextViewTextDidChangeNotification object:nil];
+
 	[self loadFaceView];
 
 	UIButton *faceButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -98,14 +102,12 @@ static float faceView_height = 240.0f;
 {
 	_faceButton.selected = !_faceButton.selected;
 	if (!_faceButton.selected) {
-		[self.textView becomeFirstResponder];//成为第一响应者
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), (^{
-			  self.textView.selectedRange = self->_currentTextRange;
-		   }));
+		InputTextView *tv = (InputTextView *)self.textView;
+		tv.textType = InputTextViewType_text;
 	}else{
 		_faceView.hidden = NO;
-		_currentTextRange = self.textView.selectedRange;
-		[self.textView resignFirstResponder];
+		InputTextView *tv = (InputTextView *)self.textView;
+		tv.textType = InputTextViewType_face;
 	}
 }
 
@@ -126,33 +128,58 @@ static float faceView_height = 240.0f;
 	CGFloat item_w = (CGRectGetWidth(self.bounds) - 20 - itemSpace * (coloum -1)) / coloum;
 
 	NSArray *faceArray = [FaceTextManager manager].faceDataArray.firstObject;
-	for (int i = 0; i< faceArray.count ; i++) {
+	for (int i = 0; i< faceArray.count+ 1 ; i++) {
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 		[scrollView addSubview:button];
 		button.tag = i + 100;
 		button.frame = CGRectMake((i % coloum) * (item_w + itemSpace)  + 10 , i/coloum * (item_w + itemSpace) + 10, item_w, item_w);
 		[button addTarget:self action:@selector(emojiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-		NSDictionary *mdic = faceArray [i];
-		NSString *imageName = mdic[@"image"];
-		UIImage *image =  [NSBundle faceImage:[NSString stringWithFormat:@"%@@3x", imageName]];
-		[button setImage:image forState:UIControlStateNormal];
+		if (i<faceArray.count) {
+			NSDictionary *mdic = faceArray [i];
+			NSString *imageName = mdic[@"image"];
+			UIImage *image =  [NSBundle faceImage:[NSString stringWithFormat:@"%@", imageName]];
+			[button setImage:image forState:UIControlStateNormal];
+		}
 		scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame), CGRectGetMaxY(button.frame));
 	}
+
+	//创建一个删除按钮
+
+
+
+	UIButton *faceDeleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	[scrollView addSubview:faceDeleteButton];
+	faceDeleteButton.backgroundColor =[UIColor whiteColor];
+	UIImage *image = [UIImage imageNamed:@"Delete_ios7"];
+	[faceDeleteButton setImage:image forState:UIControlStateNormal];
+	[faceView addSubview:faceDeleteButton];
+	faceDeleteButton.frame = CGRectMake(CGRectGetWidth(scrollView.bounds) - item_w - 10, CGRectGetMaxY(scrollView.frame) - 30 - item_w, item_w, item_w);
+	[faceDeleteButton addTarget:self action:@selector(deleteClickedAction:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)deleteClickedAction:(id)sender
+{
+	InputTextView *textV  =  (InputTextView *)self.textView;
+	[textV deleteOneText];
+}
+
 -(void)emojiButtonClicked:(UIButton *)button
 {
 	NSArray *faceArray = [FaceTextManager manager].faceDataArray.firstObject;
-	NSDictionary *mdic = faceArray [button.tag - 100];
-	NSString *text = mdic[@"text"];
-	[self changeTextWithRange:NSMakeRange(_currentTextRange.location, text.length) andText:text andTextView:self.textView];
-	[self.textView scrollRangeToVisible:_currentTextRange];
-	_currentTextRange = NSMakeRange(_currentTextRange.location + 1, _currentTextRange.length);
+	NSInteger index = button.tag - 100;
+	InputTextView *textV  =  (InputTextView *)self.textView;
+	if (index < faceArray.count) {
+		NSDictionary *mdic = faceArray [index];
+		NSString *text = mdic[@"text"];
+		[textV addFaceText:text];
+	}
 }
 //点击提交按钮
 -(void)commitClicked:(id)sender
 {
 	NSAttributedString *text =  [self.textView.attributedText copy];
-	self.textView.attributedText = [[NSAttributedString alloc]initWithString:@""];
+	InputTextView *textV  =  (InputTextView *)self.textView;
+	[textV clearText];
 	if ([self.delegate respondsToSelector:@selector(editeKeyboardView:clickedCommitWithText:)]) {
 		[self.delegate editeKeyboardView:self clickedCommitWithText:text];
 	}else{
@@ -160,25 +187,23 @@ static float faceView_height = 240.0f;
 	}
 	[self dismiss];  //隐藏
 }
-
-- (void)textViewDidChangeTextNotification:(NSNotification *)noti
+#pragma mark - InputTextViewDelegate
+-(void)inputTextView:(InputTextView *)textView
+didChangeAbsText:(NSAttributedString *)absText
+		 andOriginalText:(NSString *)originalText
 {
-    if (noti.object == self.textView) {
-		[self textViewDidChangeText];
-    }
-}
-
--(void)textViewDidChangeText
-{
-	BOOL isShowSend = (self.textView.attributedText.length > 0 && self.textView.attributedText.length != NSNotFound);
+	BOOL isShowSend = (absText.length > 0 && absText.length != NSNotFound);
 	_commitBtn.userInteractionEnabled = isShowSend;
 	_commitBtn.selected = isShowSend;
+
 	if ([self.delegate respondsToSelector:@selector(editeKeyboardView:textDidChange:)]) {
 		[self.delegate editeKeyboardView:self textDidChange:self.textView];
 	}else{
 		!_textDidChangeText?:_textDidChangeText(self.textView);
 	}
 }
+
+
 - (void)downKeyBoard:(id)sender
 {
     [self.textView resignFirstResponder];
@@ -209,17 +234,11 @@ static float faceView_height = 240.0f;
 - (UITextView *)textView
 {
     if (!_textView) {
-        _textView = [[InputTextView alloc]init];
-		_textView.allowsEditingTextAttributes = YES;
+        _textView = [[InputTextView alloc]initWithFontSize:20.0 andTextColor:[UIColor redColor] andLineHeight:4.0];
 
-		_textView.typingAttributes=
-       @{
-			NSFontAttributeName:[UIFont systemFontOfSize:18.0],
-			NSForegroundColorAttributeName:[UIColor redColor]
-		};
-		_textView.delegate = self;
-		_textView .font = [UIFont systemFontOfSize:18.0];
-		_textView.textColor = [UIColor redColor];
+		InputTextView *inputV = (InputTextView *)_textView;
+		inputV.input_delegate = self;
+
         _textView.layer.cornerRadius = 5.0;
         _textView.layer.borderColor = [self colorRred:0xf5 andGreen:0xf5 abdBlue:0xf5].CGColor;
         _textView.layer.borderWidth = 0.5;
@@ -237,36 +256,6 @@ static float faceView_height = 240.0f;
     }
     return _textView;
 }
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-	NSAttributedString *abs =  [FaceTextManager attributedStringForString:text andFont:[UIFont systemFontOfSize:18.0] andLineHeight:4];
-	if (abs.length < text.length) {
-		[self changeTextWithRange:range andText:text andTextView:textView];
-		return NO;
-	}
-	return YES;
-}
-
--(void)changeTextWithRange:(NSRange)range andText:(NSString *)text andTextView:(UITextView *)textView
-{
-	InputTextView *inputTextV = (InputTextView *)textView;
-	NSRange newRange =  [inputTextV textRangeWithRange:range];
-	NSInteger startIndex = range.location; //起始位置
-	NSInteger startLength = inputTextV.attributedText.length; //文字开始的长度
-	NSMutableString *mstr = [[NSMutableString alloc]initWithString:[inputTextV currentText]];
-	[mstr insertString:text atIndex:newRange.location];
-	NSAttributedString *abs = [FaceTextManager attributedStringForString:mstr andFont:[UIFont systemFontOfSize:18.0] andLineHeight:4];
-	NSInteger endLength = abs.length; //结束后的长度
-	NSInteger index = startIndex + (endLength - startLength);
-	[self.textView setAttributedText:abs];
-	NSRange gbRange = NSMakeRange(index, 0);
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), (^{
-		  [textView setSelectedRange:gbRange];
-	  }));
-	[self textViewDidChangeText]; //输入的文本发生变化
-	inputTextV.font = [UIFont systemFontOfSize:18.0];
-}
-
 
 - (UIColor *)colorRred:(CGFloat)r andGreen:(CGFloat)g abdBlue:(CGFloat)b
 {
@@ -292,7 +281,8 @@ static float faceView_height = 240.0f;
 
 - (void)keyBoardWillHideNotification:(NSNotification *)noti
 {
-	if (!_faceView.hidden) {
+	InputTextView *textV = (InputTextView *)self.textView;
+	if (textV.textType == InputTextViewType_face) {
 		CGFloat height = faceView_height;
 		[UIView animateWithDuration:0.2 animations:^{
 			   self.contentView.frame = CGRectMake(0, CGRectGetHeight(self.frame)- height - inputKeyBoardHeight, CGRectGetWidth(self.frame), inputKeyBoardHeight);
@@ -352,7 +342,7 @@ static float faceView_height = 240.0f;
     [self removeObserver:self forKeyPath:@"hidden"];
 	[[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(nonnull NSTextAttachment *)textAttachment inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction API_AVAILABLE(ios(10.0)) {
-    return NO;
-}
+
+
+
 @end
