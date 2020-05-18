@@ -147,6 +147,7 @@
 		8F6D0AE6246F94D200A7F2F6 = {
 			isa = PBXGroup;
 			children = (
+				8F6D0B27246F94E900A7F2F6 /* FaceTxtViewManager */,
 				8F6D0AF1246F94D200A7F2F6 /* EmojiFaceTextView */,
 				8F6D0B0D246F94D500A7F2F6 /* EmojiFaceTextViewTests */,
 				8F6D0B18246F94D500A7F2F6 /* EmojiFaceTextViewUITests */,
@@ -176,7 +177,6 @@
 				8F6D0B2C246F94E900A7F2F6 /* EditeKeyboardView.h */,
 				8F6D0B2E246F94E900A7F2F6 /* EditeKeyboardView.m */,
 				8F6D0B43246F957D00A7F2F6 /* Masonry */,
-				8F6D0B27246F94E900A7F2F6 /* FaceTxtViewManager */,
 				8F6D0AFB246F94D200A7F2F6 /* Main.storyboard */,
 				8F6D0AFE246F94D500A7F2F6 /* Assets.xcassets */,
 				8F6D0B00246F94D500A7F2F6 /* LaunchScreen.storyboard */,
