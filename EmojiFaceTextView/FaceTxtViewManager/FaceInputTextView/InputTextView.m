@@ -150,10 +150,12 @@ andLineHeight:(CGFloat)lineHeight
 {
 	if (faceText)
 	{
+	   NSInteger lastLength =  self.attributedText.length;
 	   [self changeTextWithRange:NSMakeRange(_currentTextRange.location, faceText.length) andText:faceText andTextView:self];
 	   [self scrollRangeToVisible:_currentTextRange];
+	   NSInteger currentLength = self.attributedText.length;
 	   //修改当前 textRange
-	   _currentTextRange = NSMakeRange(_currentTextRange.location + 1, _currentTextRange.length);
+	   _currentTextRange = NSMakeRange(_currentTextRange.location + (currentLength - lastLength), _currentTextRange.length);
 	}
 }
 
