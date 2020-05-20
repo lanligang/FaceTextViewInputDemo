@@ -10,6 +10,12 @@
 	</dict>
 	<dict>
 		<key>text</key>
+		<string>[美味]</string>
+		<key>image</key>
+		<string>meiwei</string>
+	</dict>
+	<dict>
+		<key>text</key>
 		<string>[欢笑]</string>
 		<key>image</key>
 		<string>huanxiao</string>
